@@ -1,35 +1,7 @@
-pipeline
-{
-    agent
-    {
-    label 'WORKSTATION'
-    }
-    triggers
-    {
-        pollSCM('*/2 * * * *')
-    }
-    stages
-    {
-        stage('Compile the code')
-        {
-            steps
-            {
-                sh 'echo compile code'
-            }
-        }
-        stage('Check the code quality')
-        {
-            steps
-            {
-                sh 'echo check the code quality'
-            }
-        }
-        stage('Test Cases')
-        {
-            steps
-            {
-                sh 'echo Test cases'
-            }
-        }
-    }
-}
+@Library('roboshop') _
+//varaibles
+env.COMPONENT = "shipping"
+env.BUILD_LABEL = "WORKSTATION"
+
+//groovy libraries
+nodejs()
