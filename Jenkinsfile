@@ -1,7 +1,14 @@
-@Library('roboshop') _
-//varaibles
-env.COMPONENT = "shipping"
-env.BUILD_LABEL = "WORKSTATION"
-
-//groovy libraries
-java()
+pipeline
+{
+    agent any
+    stages
+    {
+        stage('Demo')
+        {
+            steps
+            {
+                echo 'Hello  welcome'
+            }
+        }
+    }
+}
