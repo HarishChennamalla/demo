@@ -14,11 +14,11 @@ pipeline
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/brakeshdevops/javap.git']]])
             }
         }
-        stage('Demo')
+        stage('Build Stage')
         {
             steps
             {
-                echo 'Hello  welcome'
+                sh 'mvn -Dmaven.test.failure.ignore-true clean package'
             }
         }
     }
