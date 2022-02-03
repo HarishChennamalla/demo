@@ -7,6 +7,13 @@ pipeline
     }
     stages
     {
+        stage('Checkout stage')
+        {
+            steps
+            {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/brakeshdevops/javap.git']]])
+            }
+        }
         stage('Demo')
         {
             steps
