@@ -22,4 +22,12 @@ pipeline
             }
         }
     }
+    post
+    {
+        junit
+        {
+            allowEmptyResults:true,
+            testResults:'*testResults/.xml'
+        }
+    }
 }
