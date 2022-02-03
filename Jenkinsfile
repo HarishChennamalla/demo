@@ -22,12 +22,12 @@ pipeline
             }
         }
     }
-    post
-    {
-        junit
-        {
-            allowEmptyResults: false,
-            testResults:'*testResults/.xml'
-        }
-    }
+//     post
+//     {
+//         junit
+//         {
+//             allowEmptyResults: false,
+//             testResults:'*testResults/.xml'
+//         }
+//     }
 }
