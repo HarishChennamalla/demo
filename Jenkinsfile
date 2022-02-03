@@ -26,7 +26,7 @@ pipeline
     {
         junit
         {
-            allowEmptyResults:true,
+            allowEmptyResults: false,
             testResults:'*testResults/.xml'
         }
     }
