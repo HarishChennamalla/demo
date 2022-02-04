@@ -1,6 +1,9 @@
 pipeline
 {
-    agent DOCKERNODE
+    agent
+    {
+    label 'DOCKERNODE'
+    }
     tools
     {
         maven 'MAVEN'
