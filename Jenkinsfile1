@@ -21,11 +21,15 @@ pipeline
                 sh 'mvn -Dmaven.test.failure.ignore-true clean install'
             }
         }
-        stage('Demo')
+        stage('Build Docker Image')
         {
             steps
             {
-                echo 'Welcome to docker configuration'
+                script
+                {
+                    sh 'docker build -t devopshint/my-app-1.0 .'
+                }
+
             }
         }
     }
