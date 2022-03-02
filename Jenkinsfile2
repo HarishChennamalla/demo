@@ -1,0 +1,21 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage('One')
+        {
+            steps
+            {
+                sh 'echo Welcome to Jenkins stage1'
+            }
+        }
+        stage('Two')
+        {
+            steps
+            {
+                sh 'echo Welcome to stage2'
+            }
+        }
+    }
+}
