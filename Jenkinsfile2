@@ -11,7 +11,7 @@ pipeline
             }
             steps
             {
-                sh 'echo Welcome to maven node1'
+                mvn -version
             }
         }
         stage('Two')
