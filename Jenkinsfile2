@@ -1,17 +1,26 @@
 pipeline
 {
-    agent any
+
     stages
     {
         stage('One')
         {
+            agent
+            {
+            label 'MAVEN_NODE'
+            }
             steps
             {
-                sh 'echo Welcome to Jenkins stage1'
+                sh 'echo Welcome to maven node1'
             }
         }
         stage('Two')
         {
+        agent
+        {
+            label 'MAVEN'
+        }
+        }
             steps
             {
                 sh 'echo Welcome to stage2'
