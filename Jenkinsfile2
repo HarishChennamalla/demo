@@ -11,7 +11,8 @@ pipeline
             }
             steps
             {
-                mvn -version
+
+                sh 'mvn -version'
             }
         }
         stage('Two')
