@@ -20,7 +20,6 @@ pipeline
         {
             label 'MAVEN'
         }
-        }
             steps
             {
                 sh 'echo Welcome to stage2'
