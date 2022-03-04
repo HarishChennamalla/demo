@@ -19,11 +19,11 @@ pipeline
         {
         agent
         {
-            label 'MAVEN_NODE'
+            label 'SONAR_NODE'
         }
             steps
             {
-                sh 'echo Welcome to stage2'
+                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=. -Dsonar.host.url=http://172.31.8.216:9000 -Dsonar.login=admin -Dsonar.password=admin123
             }
         }
     }
