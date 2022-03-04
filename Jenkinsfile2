@@ -18,7 +18,7 @@ pipeline
         {
             steps
             {
-                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=. -Dsonar.host.url=http://172.31.13.96:9000 -Dsonar.login=admin -Dsonar.password=admin123'
+                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=src/main/java/ -sonar.language=java -Dsonar.java.binaries=**/target/classes -Dsonar.host.url=http://172.31.13.96:9000 -Dsonar.login=admin -Dsonar.password=admin123'
             }
         }
     }
