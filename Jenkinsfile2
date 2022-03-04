@@ -1,29 +1,20 @@
 pipeline
 {
-    agent none
+    agent any
     stages
     {
         stage('One')
         {
-            agent
-            {
-            label 'MAVEN_NODE'
-            }
             steps
             {
-
                 sh 'mvn clean install'
             }
         }
         stage('Two')
         {
-        agent
-        {
-            label 'SONAR_NODE'
-        }
             steps
             {
-                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=. -Dsonar.host.url=http://172.31.8.216:9000 -Dsonar.login=admin -Dsonar.password=admin123'
+                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=. -Dsonar.host.url=http://172.31.13.96:9000 -Dsonar.login=admin -Dsonar.password=admin123'
             }
         }
     }
