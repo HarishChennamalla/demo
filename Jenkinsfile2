@@ -23,7 +23,7 @@ pipeline
         }
             steps
             {
-                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=. -Dsonar.host.url=http://172.31.8.216:9000 -Dsonar.login=admin -Dsonar.password=admin123
+                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=. -Dsonar.host.url=http://172.31.8.216:9000 -Dsonar.login=admin -Dsonar.password=admin123'
             }
         }
     }
