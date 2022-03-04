@@ -11,14 +11,18 @@ pipeline
         {
             steps
             {
-                sh 'mvn compile'
+                sh 'mvn clean package'
             }
         }
         stage('Two')
         {
             steps
             {
-                sh 'sonar-scanner -Dsonar.projectKey="javap" -Dsonar.sources=src/main/java/ -sonar.language=java -Dsonar.java.binaries=**/target/classes -Dsonar.host.url=http://172.31.13.96:9000 -Dsonar.login=admin -Dsonar.password=admin123'
+            withSonarQubeEnv('sonar')
+            {
+                sh 'mvn sonar:sonar'
+            }
+
             }
         }
     }
