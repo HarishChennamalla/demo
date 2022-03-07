@@ -7,14 +7,14 @@ pipeline
         }
     stages
     {
-        stage('One')
+        stage('Compile the code')
         {
             steps
             {
                 sh 'mvn clean package'
             }
         }
-        stage('Two')
+        stage('Checking the code quality')
         {
             steps
             {
@@ -23,6 +23,18 @@ pipeline
                 sh 'mvn sonar:sonar'
             }
 
+            }
+        }
+        stage('Pushing the artifacts to nexus repository')
+        {
+            steps
+            {
+            sh '''
+                mvn clean package
+                mv target/javap.jar javap.jar
+                zip -r javap.zip javap.jar
+                curl -f -v -u admin:admin123 --upload-file javap.zip http://172.31.7.9:8081/repository/repositories/javap-hosted/javap.zip
+               '''
             }
         }
     }
