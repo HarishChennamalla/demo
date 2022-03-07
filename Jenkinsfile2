@@ -33,7 +33,7 @@ pipeline
                 mvn clean package
                 mv target/shipping-1.0.jar javap.jar
                 zip -r javap.zip javap.jar
-                curl -f -v -u admin:admin123 --upload-file javap.zip http://3.231.164.10:8081/repository/javap-hosted/javap.zip
+                curl -f -v -u admin:admin123 --upload-file javap.zip http://3.231.164.10:8081/repository/javap/javap.zip
                '''
             }
         }
